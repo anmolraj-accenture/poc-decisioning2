@@ -30,18 +30,12 @@ function renderOffer(result) {
 function runPersonalization() {
   console.log("🚀 Sending personalization request to AJO...");
 
-  alloy("sendEvent", {
-    renderDecisions: true,
-    decisionScopes: ["ajo-offer"]
-  })
-    .then(renderOffer)
-    .catch((error) => {
-      console.error("❌ sendEvent failed:", error);
-      const errorBox = document.getElementById("error-message");
-      if (errorBox) {
-        errorBox.textContent = "Failed to load personalization.";
-      }
-    });
+alloy("sendEvent", {
+  renderDecisions: true,
+  decisionScopes: ["__view__"]
+}).then(result => {
+  console.log("TEST RESPONSE:", result);
+});
 }
 
 function waitForAlloy(callback, retries = 30) {
