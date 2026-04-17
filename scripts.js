@@ -29,12 +29,9 @@ function handleSubscription() {
 
 function runPersonalization() {
   alloy("sendEvent", {
+    renderDecisions: true,
     personalization: {
-      decisionScopes: [
-        "ewogICJhY3Rpdml0eUlkIjogImRwczpvZmZlci1hY3Rpdml0eToxYTdmMzBkMzgyOWFkZGUyIiwKICAicGxhY2VtZW50SWQiOiAiZHBzOm9mZmVyLXBsYWNlbWVudDoxYTdmMmEyMmEyOTc5MTYxIgp9",
-        "ewogICJhY3Rpdml0eUlkIjogImRwczpvZmZlci1hY3Rpdml0eToxYTdmMzBkMzgyOWFkZGUyIiwKICAicGxhY2VtZW50SWQiOiAiZHBzOm9mZmVyLXBsYWNlbWVudDoxYTdmMmEwYTc0NzdlOTYyIgp9",
-        "ewogICJhY3Rpdml0eUlkIjogImRwczpvZmZlci1hY3Rpdml0eToxYTdmMzBkMzgyOWFkZGUyIiwKICAicGxhY2VtZW50SWQiOiAiZHBzOm9mZmVyLXBsYWNlbWVudDoxYTdmMjg5YWZjMzdlOTYxIgp9"
-      ]
+      decisionScopes: ["ajo-offer"]
     }
   }).then(result => {
     console.log("📦 Full sendEvent response:", result);
