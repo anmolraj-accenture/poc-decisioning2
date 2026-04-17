@@ -13,9 +13,11 @@ function handleSubscription() {
       eventType: "newsletterSubscription",
       eventID: "newsletter_signup_event",
       timestamp: new Date().toISOString(),
-      FinancialInterest: {
-        PreferredFinancialInstrument: selectedNewsletter.value
-      }
+      _accenture_partner: {
+        Interest: {
+          PreferredInterest: selectedNewsletter.value
+        }
+    }
     }
   };
 
