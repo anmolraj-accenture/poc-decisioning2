@@ -42,7 +42,7 @@ function runPersonalization() {
       timestamp: new Date().toISOString(),
       _accenture_partner: {
         Interest: {
-          PreferredInterest: selectedAssetClass.value
+          PreferredInterest: "abc"
         }
     }}
   })
