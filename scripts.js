@@ -36,7 +36,6 @@ function runPersonalization() {
               "web://anmolraj-accenture.github.io/poc-decisioning2#ajo-offer"
             ]
           },
-    event: "assetClassSelection",
     xdm: {
       eventType: "assetClassSelection",
       eventID: "investment_preference_event",
