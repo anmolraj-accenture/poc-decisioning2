@@ -32,7 +32,7 @@ function runPersonalization() {
 alloy("sendEvent", {
   renderDecisions: true,
   personalization: {
-    surfaces: ["web://anmolraj-accenture.github.io/poc-decisioning2#offerContainer"],
+    surfaces: ["web://anmolraj-accenture.github.io/poc-decisioning2#ajo-offer"],
   },
 }).then(renderOffer)
     .catch((error) => {
