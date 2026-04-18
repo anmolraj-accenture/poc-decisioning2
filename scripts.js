@@ -31,7 +31,23 @@ function runPersonalization() {
   console.log("🚀 Sending personalization request to AJO...");
   alloy("sendEvent", {
     renderDecisions: true,
-    decisionScopes: ["ajo-offer"]
+    personalization: {
+            surfaces: [
+              "web://anmolraj-accenture.github.io/poc-decisioning2#ajo-offer"
+            ]
+          },
+      const subscriptionEvent = {
+    event: "assetClassSelection",
+    xdm: {
+      eventType: "assetClassSelection",
+      eventID: "investment_preference_event",
+      timestamp: new Date().toISOString(),
+      _accenture_partner: {
+        Interest: {
+          PreferredInterest: selectedAssetClass.value
+        }
+    }}
+  }
   })
     .then(renderOffer)
     .catch((error) => {
