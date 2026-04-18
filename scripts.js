@@ -29,23 +29,12 @@ function renderOffer(result) {
 
 function runPersonalization() {
   console.log("🚀 Sending personalization request to AJO...");
-  alloy("sendEvent", {
-    renderDecisions: true,
-    personalization: {
-            surfaces: [
-              "web://anmolraj-accenture.github.io/poc-decisioning2#ajo-offer"
-            ]
-          },
-    xdm: {
-      eventType: "assetClassSelection",
-      eventID: "investment_preference_event",
-      timestamp: new Date().toISOString(),
-      _accenture_partner: {
-        Interest: {
-          PreferredInterest: "abc"
-        }
-    }}
-  })
+alloy("sendEvent", {
+  renderDecisions: true,
+  personalization: {
+    surfaces: ["web://anmolraj-accenture.github.io/poc-decisioning#offerContainer"],
+  },
+}).then(applyPersonalization("web://anmolraj-accenture.github.io/poc-decisioning#offerContainer"));
     .then(renderOffer)
     .catch((error) => {
       console.error("❌ sendEvent failed:", error);
