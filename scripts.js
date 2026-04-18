@@ -34,8 +34,7 @@ alloy("sendEvent", {
   personalization: {
     surfaces: ["web://anmolraj-accenture.github.io/poc-decisioning#offerContainer"],
   },
-}).then(applyPersonalization("web://anmolraj-accenture.github.io/poc-decisioning#offerContainer"));
-    .then(renderOffer)
+}).then(applyPersonalization("web://anmolraj-accenture.github.io/poc-decisioning#offerContainer"))
     .catch((error) => {
       console.error("❌ sendEvent failed:", error);
       const errorBox = document.getElementById("error-message");
