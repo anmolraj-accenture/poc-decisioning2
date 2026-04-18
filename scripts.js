@@ -36,7 +36,6 @@ function runPersonalization() {
               "web://anmolraj-accenture.github.io/poc-decisioning2#ajo-offer"
             ]
           },
-      const subscriptionEvent = {
     event: "assetClassSelection",
     xdm: {
       eventType: "assetClassSelection",
@@ -47,7 +46,6 @@ function runPersonalization() {
           PreferredInterest: selectedAssetClass.value
         }
     }}
-  }
   })
     .then(renderOffer)
     .catch((error) => {
